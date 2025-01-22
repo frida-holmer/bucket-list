@@ -4,6 +4,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Bucket List</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Fascinate&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="./style.css" />
         <script src="./script.js" defer></script>
     <style>
@@ -17,8 +20,10 @@
 
         <main>
             <form id="bucketForm">
+                <label for="activityName" class="visually-hidden">Aktivitet</label>
                 <input type="text" id="activityName" placeholder="Vad vill du göra?" required />
 
+                <label for="activityCategory" class="visually-hidden">Kategori</label>
                 <select id="activityCategory">
                     <option value="Resor">Resor</option>
                     <option value="Äventyr">Äventyr</option>
@@ -29,8 +34,8 @@
                 <button type="submit">Lägg till</button>
             </form>
 
-            <section>
-                <ul id="bucketLists"></ul>
+            <section id="bucketLists">
+                <!-- Bucket list items here -->
             </section>
         </main>
     </body>

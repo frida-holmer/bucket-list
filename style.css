@@ -1,23 +1,147 @@
+/* Resets */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Utilities (from Planned Planthood code) */
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+/* Body */
 body {
+    padding-top: 3em;
     font-family: Arial, sans-serif;
-}
-
-#bucketLists div {
-    margin-bottom: 20px;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-li {
+    font-size: 1rem;
+    min-height: 100vh;
+    background-color: #065579; /* For browsers that do not support gradients */
+    background-image: linear-gradient(to bottom right, #03356a, #15aa9e);
+    text-align: center;
+    color: #fff;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 0;
+    flex-direction: column;
+    gap: 2em;
 }
 
+/* Header */
+h1 {
+    font-family: "Fascinate", serif;
+    font-size: 3rem;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* Global button styling */
 button {
-    margin-left: 10px;
+    border: none;
+}
+
+/* Main */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+
+    /* Form */
+    form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.3em;
+        padding: 1em;
+    
+        /* Text input field */
+        input {
+            height: 3em;
+            padding: 0.5em 1em;
+            width: 50%;
+            border: none;
+        }
+    
+        /* Select category input */
+        select {
+            height: 3em;
+            padding: 0.5em 1em;
+            border: none;
+        }
+    
+        /* Submit button */
+        button {
+            background-color: #f09897;
+            border-radius: 2em;
+            margin-left: 0.5em;
+            height: 3em;
+            padding: 0.5em 1em;
+            min-width: 8em;
+    
+            &:hover,
+            &:focus-visible {
+              background-color: transparent;
+              border: 2px solid #f09897;
+              color: #ffffff;
+            }
+        }
+    }
+
+    /* Bucket list section */
+    #bucketLists {
+        margin-bottom: 20px;
+    
+        /* Category sections */
+        section {
+            padding: 0.5em;
+    
+            /* Category titles */
+            h2 {
+                padding: 0 0.4em;
+                text-align: left;
+                font-size: 1.5rem;
+            }
+    
+            /* Bucket list */
+            ul {
+                list-style-type: none;
+            
+                /* Bucket list items */
+                li {
+                    margin: 0.5em;
+                    height: 3em;
+                    background-color: #fff;
+                    color: #000;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+                    gap: 1em;
+                    padding: 1em;
+                    border-radius: 0.3em;
+                    box-shadow: 0.1em 0.1em 0.3em rgba(0, 0, 0, 0.25);
+            
+                    /* Button to remove list item */
+                    #remove-btn {
+                        margin-left: auto;
+                        background-color: #ffffff;
+                        height: 1.5em;
+                        padding: 0 1em;
+                        background-image: url(./images/close.png);
+                        background-size: cover;
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                    }
+                }
+            }
+        }
+    }
 }
